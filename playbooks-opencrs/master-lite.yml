@@ -14,7 +14,7 @@
       state: link
 
   - name: Install Docker
-    include: docker-install.yml
+    import_tasks: docker-install.yml
 
   - name: Add vagrant user to docker group
     user:
@@ -23,7 +23,7 @@
       append: yes
 
   - name: Add dataset
-    include: dataset.yml
+    import_tasks: dataset.yml
 
   #- name: Reboot the machine
     #reboot:
