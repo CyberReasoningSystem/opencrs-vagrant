@@ -26,6 +26,9 @@
   - name: Add dataset
     import_tasks: dataset.yml
 
+  - name: Add attack surfece approximation
+    import_tasks: attack-surface-approx.yml
+
   #- name: Reboot the machine
     #reboot:
 
