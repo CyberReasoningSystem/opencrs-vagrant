@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    username: "vagrant"
+    hostname: "opencrs"
+
+  tasks:
+  - name: Set the timezone to 'Bucharest'
+    file:
+      src: /usr/share/zoneinfo/Europe/Bucharest
+      dest: /etc/localtime
+      state: link
+
+  - name: Install Docker
+    include: docker-install.yml
+
+  - name: Add vagrant user to docker group
+    user:
+      name: vagrant
+      groups: docker
+      append: yes
+
+  - name: Add dataset
+    include: dataset.yml
+
+  #- name: Reboot the machine
+    #reboot:
+
