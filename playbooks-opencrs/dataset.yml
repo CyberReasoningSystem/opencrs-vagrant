@@ -5,16 +5,16 @@
 - name: Clone dataset from GitHub
   ansible.builtin.git:
     repo: https://github.com/CyberReasoningSystem/dataset.git
-    dest: /home/vagrant/dataset
+    dest: /home/{{ username }}/dataset
     recursive: True
 
 - name: Install dataset deps
   ansible.builtin.shell: poetry install --no-dev
   args:
-    chdir: /home/vagrant/dataset/
+    chdir: /home/{{ username }}/dataset/
 
 - name: Build dataset docker container
   ansible.builtin.shell: docker build --tag ubuntu_32bit_compilator others/ubuntu_32bit_compilator
   args:
-    chdir: /home/vagrant/dataset/
+    chdir: /home/{{ username }}/dataset/
 
