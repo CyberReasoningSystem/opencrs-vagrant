@@ -29,6 +29,9 @@
   - name: Add attack surfece approximation
     import_tasks: attack-surface-approx.yml
 
+  - name: Add vulnerability detection
+    import_tasks: vulnerability_detection.yml
+
   #- name: Reboot the machine
     #reboot:
 
