@@ -38,6 +38,23 @@ Start the VM using:
 vagrant up --provider=vmware_desktop
 ```
 
+## Accessing the VM
+
+To access the VM via `ssh` run the `vagrant ssh` command.
+
+To accces the VM from the CLI using the `ssh` command, you first need
+to dump the ssh config into a file and the instruct the `ssh` command
+to load the configs from the file.
+The config file will tell the `ssh` command where to find the ssh key
+used to auth.
+
+```
+vagrant ssh-config > ssh-conf
+ssh -F ssh-conf vagrant@default
+```
+
+The same applies to `scp`. Just add the `-F ssh-conf` argument to your scp command.
+
 ## Exporting the VM
 
 Use the `playbooks-opencrs/export.sh` script to get an `.ova` image.
