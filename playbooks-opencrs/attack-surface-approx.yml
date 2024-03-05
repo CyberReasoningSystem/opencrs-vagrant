@@ -5,6 +5,9 @@
   ansible.builtin.pip:
     name: poetry
 
+- name: Add commons
+  import_tasks: commons.yml
+
 - name: Clone attack_surface_approximation from GitHub
   ansible.builtin.git:
     repo: https://github.com/CyberReasoningSystem/attack_surface_approximation.git
@@ -17,6 +20,6 @@
     chdir: /home/{{ username }}/attack_surface_approximation/
 
 - name: Build attack_surface_approximation docker container
-  ansible.builtin.shell: docker build --tag qbdi_args_fuzzing others/qbdi_docker
+  ansible.builtin.shell: docker build --tag qbdi_args_fuzzing -f commons/qbdi/Dockerfile.qbdi_docker
   args:
-    chdir: /home/{{ username }}/attack_surface_approximation/
+    chdir: /home/{{ username }}/commons/

@@ -1,0 +1,5 @@
+- name: Clone commons from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/commons.git
+    dest: /home/{{ username }}/commons
+    recursive: True
