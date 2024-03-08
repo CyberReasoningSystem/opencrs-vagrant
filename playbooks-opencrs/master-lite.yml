@@ -23,6 +23,18 @@
       append: yes
     become: yes
 
+  - name: Add specified repository into sources list
+    ansible.builtin.apt_repository:
+      repo: ppa:deadsnakes/ppa
+      state: present
+    become: yes
+
+  - name: Install the toolchain
+    apt:
+      name: ['python3.12', 'python3.12-dev']
+      state: present
+    become: yes
+
   - name: Add dataset
     import_tasks: dataset.yml
 
