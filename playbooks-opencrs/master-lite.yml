@@ -23,15 +23,9 @@
       append: yes
     become: yes
 
-  - name: Add specified repository into sources list
-    ansible.builtin.apt_repository:
-      repo: ppa:deadsnakes/ppa
-      state: present
-    become: yes
-
   - name: Install the toolchain
     apt:
-      name: ['python3.12', 'python3.12-dev']
+      name: ['python3.10', 'python3.10-dev']
       state: present
     become: yes
 
