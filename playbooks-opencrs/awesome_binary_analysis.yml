@@ -1,0 +1,12 @@
+- name: Install Pandas
+  ansible.builtin.pip:
+    name: pandas
+  
+- name: Clone awesome-binary-analysis from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/awesome-binary-analysis.git
+    dest: /home/{{ username }}/awesome-binary-analysis
+    recursive: True
+
+
+

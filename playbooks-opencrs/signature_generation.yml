@@ -1,0 +1,13 @@
+- name: Install poetry
+  ansible.builtin.pip:
+    name: poetry
+
+- name: Add commons
+  import_tasks: commons.yml
+
+- name: Clone signature_generation from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/signature_generation.git
+    dest: /home/{{ username }}/signature_generation
+    force: yes
+    recursive: True

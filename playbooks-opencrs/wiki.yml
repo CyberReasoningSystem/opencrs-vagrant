@@ -1,0 +1,10 @@
+- name: Install poetry
+  ansible.builtin.pip:
+    name: poetry
+
+- name: Clone wiki from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/wiki.git
+    dest: /home/{{ username }}/wiki
+    recursive: True
+

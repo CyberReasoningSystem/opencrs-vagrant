@@ -1,0 +1,8 @@
+
+
+- name: Clone nist_c_test_suite from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/nist_c_test_suite.git
+    dest: /home/{{ username }}/nist_c_test_suite
+    recursive: True
+

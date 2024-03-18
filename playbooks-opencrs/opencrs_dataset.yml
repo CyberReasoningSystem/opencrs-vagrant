@@ -1,0 +1,5 @@
+- name: Clone opencrs_dataset from GitHub
+  ansible.builtin.git:
+    repo: https://github.com/CyberReasoningSystem/opencrs_dataset.git
+    dest: /home/{{ username }}/opencrs_dataset
+    recursive: True
