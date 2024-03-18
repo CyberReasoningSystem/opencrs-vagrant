@@ -38,11 +38,33 @@
   - name: Add dataset
     import_tasks: dataset.yml
 
-  - name: Add attack surfece approximation
-    import_tasks: attack-surface-approx.yml
+  - name: Add attack surface approximation
+    import_tasks: attack-surface-approximation.yml
 
-  - name: Add vulnerability detection
-    import_tasks: vulnerability_detection.yml
+  - name: Add vulnerability_analytics
+    import_tasks: vulnerability_analytics.yml
+
+  - name: Add automatic_exploit_generation
+    import_tasks: automatic_exploit_generation.yml 
+
+  - name: Add wiki
+    import_tasks: wiki.yml
+
+  - name: Add opencrs_dataset
+    import_tasks: opencrs_dataset.yml
+  
+  - name: Add zeratool_lib
+    import_tasks: zeratool_lib.yml
+  
+  - name: Add awesome_binary_analysis
+    import_tasks: awesome_binary_analysis.yml
+
+  - name: Add nist_c_test_suite
+    import_tasks: nist_c_test_suite.yml
+  
+  # signature_generation repo is private, therefore we can't clone it
+  # - name: Add signature_generation
+  #   import_tasks: signature_generation.yml
 
   #- name: Reboot the machine
     #reboot:
