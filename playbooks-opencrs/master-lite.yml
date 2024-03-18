@@ -38,6 +38,9 @@
   - name: Add vulnerability_analytics
     import_tasks: vulnerability_analytics.yml
 
+  - name: Add vulnerability_detection
+    import_tasks: vulnerability_detection.yml
+
   - name: Add automatic_exploit_generation
     import_tasks: automatic_exploit_generation.yml 
 
