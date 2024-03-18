@@ -62,9 +62,8 @@
   - name: Add nist_c_test_suite
     import_tasks: nist_c_test_suite.yml
   
-  # signature_generation repo is private, therefore we can't clone it
-  # - name: Add signature_generation
-  #   import_tasks: signature_generation.yml
+  - name: Add signature_generation
+    import_tasks: signature_generation.yml
 
   #- name: Reboot the machine
     #reboot:

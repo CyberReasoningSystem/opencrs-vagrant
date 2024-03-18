@@ -11,8 +11,3 @@
     dest: /home/{{ username }}/signature_generation
     force: yes
     recursive: True
-
-- name: Install signature_generation deps
-  ansible.builtin.shell: PATH=/home/{{ username }}/.local/bin:$PATH poetry install --no-dev
-  args:
-    chdir: /home/{{ username }}/signature_generation/
